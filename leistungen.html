@@ -199,30 +199,7 @@
   </footer>
 
 
-  <script>
-    (function() {
-      var toggle  = document.querySelector('.nav-toggle');
-      var menu    = document.getElementById('navMenu');
-      var overlay = document.getElementById('navOverlay');
-      var close   = document.getElementById('navClose');
-      function openNav() {
-        menu.classList.add('nav-menu--open');
-        overlay.classList.add('nav-overlay--visible');
-        toggle.setAttribute('aria-expanded', 'true');
-        document.body.style.overflow = 'hidden';
-      }
-      function closeNav() {
-        menu.classList.remove('nav-menu--open');
-        overlay.classList.remove('nav-overlay--visible');
-        toggle.setAttribute('aria-expanded', 'false');
-        document.body.style.overflow = '';
-      }
-      toggle.addEventListener('click', openNav);
-      close.addEventListener('click', closeNav);
-      overlay.addEventListener('click', closeNav);
-      document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeNav(); });
-    })();
-  </script>
+  <script src="main.js" defer></script>
 
 </body>
 </html>
