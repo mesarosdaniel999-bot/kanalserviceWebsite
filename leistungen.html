@@ -4,18 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Leistungen – Rohrreinigung, Kanalinspektion & Notdienst Hannover | ClearFlow Services</title>
-  <meta name="description" content="Alle Leistungen von ClearFlow Services in Hannover: professionelle Rohrreinigung, TV-Kanalinspektion und 24/7 Notdienst. Schnell, gründlich und zu fairen Preisen.">
+  <title>Leistungen – Rohrreinigung, Kanalinspektion & Notdienst Hannover | CleanFlow Kanalservice</title>
+  <meta name="description" content="Alle Leistungen von CleanFlow Kanalservice in Hannover: professionelle Rohrreinigung, TV-Kanalinspektion und 24/7 Notdienst. Schnell, gründlich und zu fairen Preisen.">
   <meta name="keywords" content="Rohrreinigung Hannover, Kanalinspektion Hannover, Notdienst Rohrreinigung Hannover, Abfluss reinigen Hannover, Rohrverstopfung Hannover">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://www.clearflow-services.de/leistungen.html">
+  <link rel="canonical" href="https://www.cleanflow-kanalservice.de/leistungen.html">
 
   <meta property="og:type" content="website">
   <meta property="og:locale" content="de_DE">
-  <meta property="og:title" content="Leistungen – Rohrreinigung & Notdienst Hannover | ClearFlow Services">
+  <meta property="og:title" content="Leistungen – Rohrreinigung & Notdienst Hannover | CleanFlow Kanalservice">
   <meta property="og:description" content="Professionelle Rohrreinigung, Kanalinspektion und 24/7 Notdienst in Hannover. Jetzt anrufen und schnelle Hilfe erhalten.">
-  <meta property="og:url" content="https://www.clearflow-services.de/leistungen.html">
-  <meta property="og:site_name" content="ClearFlow Services Hannover">
+  <meta property="og:url" content="https://www.cleanflow-kanalservice.de/leistungen.html">
+  <meta property="og:site_name" content="CleanFlow Kanalservice Hannover">
 
   <script type="application/ld+json">
   {
@@ -23,7 +23,7 @@
     "@type": "Service",
     "provider": {
       "@type": "Plumber",
-      "name": "ClearFlow Services",
+      "name": "CleanFlow Kanalservice",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Hannover",
@@ -57,14 +57,17 @@
   <!-- NAVBAR -->
   <header class="navbar">
     <div class="nav-content">
-      <div class="logo"><a href="index.html" style="text-decoration:none;color:inherit;">Clear<span>Flow</span> Services</a></div>
-      <nav aria-label="Hauptnavigation">
+      <div class="logo"><a href="index.html">Clean<span>Flow</span> Kanalservice</a></div>
+      <button class="nav-toggle" aria-label="Menü öffnen" aria-expanded="false">☰</button>
+      <nav class="nav-menu" id="navMenu" aria-label="Hauptnavigation">
+        <button class="nav-close" id="navClose" aria-label="Menü schließen">✕</button>
         <a href="index.html">Home</a>
         <a href="leistungen.html" class="nav-active">Leistungen</a>
         <a href="ueber-uns.html">Über uns</a>
         <a href="kontakt.html">Kontakt</a>
       </nav>
     </div>
+    <div class="nav-overlay" id="navOverlay"></div>
   </header>
 
   <!-- PAGE HERO -->
@@ -86,7 +89,7 @@
         <div class="service-block-icon">🔧</div>
         <div class="service-block-content">
           <h2>Rohrreinigung Hannover</h2>
-          <p>Ein verstopfter Abfluss in der Küche, ein Waschbecken das nicht mehr abläuft, oder Wasser das sich im Duschboden staut – solche Probleme entstehen oft ohne Vorwarnung und müssen schnell gelöst werden. Bei ClearFlow Services sind wir auf professionelle Rohrreinigung in Hannover spezialisiert und wissen genau, wie wir auch hartnäckige Verstopfungen zuverlässig beseitigen.</p>
+          <p>Ein verstopfter Abfluss in der Küche, ein Waschbecken das nicht mehr abläuft, oder Wasser das sich im Duschboden staut – solche Probleme entstehen oft ohne Vorwarnung und müssen schnell gelöst werden. Bei CleanFlow Kanalservice sind wir auf professionelle Rohrreinigung in Hannover spezialisiert und wissen genau, wie wir auch hartnäckige Verstopfungen zuverlässig beseitigen.</p>
           <p>Wir arbeiten mit moderner Hochdruckspültechnik, die Ablagerungen, Fett, Kalk und organische Rückstände aus dem Rohr löst – gründlich und nachhaltig. Anders als handelsübliche Abflussreiniger greifen wir die Ursache direkt an, ohne Ihre Rohre mit aggressiven Chemikalien zu belasten. Nach dem Einsatz läuft Ihr Abfluss wieder so, als wäre er neu.</p>
           <p>Ob Einfamilienhaus in Hannover-Südstadt, Mehrfamilienhaus in Linden oder Gewerbegebäude in der Nordstadt – wir kommen zu Ihnen und lösen das Problem vor Ort. Transparentes Festpreisangebot vor dem Einsatz, keine versteckten Kosten.</p>
           <div class="service-tags">
@@ -190,10 +193,36 @@
   <!-- FOOTER -->
   <footer class="footer">
     <div class="footer-content">
-      <p>© 2026 ClearFlow Services – Rohrreinigung Hannover</p>
+      <p>© 2026 CleanFlow Kanalservice – Rohrreinigung Hannover</p>
       <p><a href="#">Impressum</a> · <a href="#">Datenschutz</a></p>
     </div>
   </footer>
+
+
+  <script>
+    (function() {
+      var toggle  = document.querySelector('.nav-toggle');
+      var menu    = document.getElementById('navMenu');
+      var overlay = document.getElementById('navOverlay');
+      var close   = document.getElementById('navClose');
+      function openNav() {
+        menu.classList.add('nav-menu--open');
+        overlay.classList.add('nav-overlay--visible');
+        toggle.setAttribute('aria-expanded', 'true');
+        document.body.style.overflow = 'hidden';
+      }
+      function closeNav() {
+        menu.classList.remove('nav-menu--open');
+        overlay.classList.remove('nav-overlay--visible');
+        toggle.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      }
+      toggle.addEventListener('click', openNav);
+      close.addEventListener('click', closeNav);
+      overlay.addEventListener('click', closeNav);
+      document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeNav(); });
+    })();
+  </script>
 
 </body>
 </html>
